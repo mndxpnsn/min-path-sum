@@ -24,11 +24,10 @@ int min(int a, int b) {
 }
 
 void init_dp() {
-    for(int i = 0; i < MAX; ++i) {
-        for(int j = 0; j < MAX; ++j) {
+    
+    for(int i = 0; i < MAX; ++i)
+        for(int j = 0; j < MAX; ++j)
             dp[i][j] = -1;
-        }
-    }
 }
 
 int min_path(vector<vector<int>> & grid, int m, int n) {
@@ -42,18 +41,16 @@ int min_path(vector<vector<int>> & grid, int m, int n) {
     
     if(m == 0) {
         int sum_loc = 0;
-        for(int i = n; i > -1; --i) {
+        for(int i = n; i > -1; --i)
             sum_loc = sum_loc + grid[m][i];
-        }
         
         return sum_loc;
     }
     
     if(n == 0) {
         int sum_loc = 0;
-        for(int i = m; i > -1; --i) {
+        for(int i = m; i > -1; --i)
             sum_loc = sum_loc + grid[i][n];
-        }
         
         return sum_loc;
     }
